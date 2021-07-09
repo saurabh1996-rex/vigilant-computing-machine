@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root{
+    --Font: 'Kumbh Sans', sans-serif;
+//     ## Colors
+
+// ### Primary
+
+// #### Text
+
+--Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+--Soft-red: hsl(14, 88%, 65%);
+
+// #### Gradient
+
+// Background gradient:
+
+--Soft-violet: hsl(273, 75%, 66%);
+--Soft-blue: hsl(240, 73%, 65%);
+
+// ### Neutral
+
+// #### Text
+
+--Very-dark-grayish-blue: hsl(237, 12%, 33%);
+--Dark-grayish-blue: hsl(240, 6%, 50%);
+
+// #### Dividers
+
+--Light-grayish-blue: hsl(240, 5%, 91%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--Font);
+    background-image: linear-gradient(var(--Soft-violet),var(--Soft-blue));
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .images_desktop{
+        display: none;
+    }
+    .images_mobile{
+        .mobile_illustration{
+            position: absolute;
+            top: 2.2%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        .mobile_pattern{
+            position: absolute;
+            top: 15.5%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    }
+    main{
+        height: 75%;
+        width: 90%;
+        margin-top: 3rem;
+        background-color:#fff;
+        border-radius: 20px;
+        padding:8.5rem 2rem;
+        text-align: center;
+        overflow: scroll;
+        position: relative;
+        box-shadow: 20px 5px 150px 1px rgba(0,0,0,0.8);
+        
+        h1{
+            color: var(--Very-dark-desaturated-blue);
+            margin-bottom:1rem;
+        }
+        .faq_list{
+            list-style: none;
+            text-align: justify; 
+            li{
+                padding: 1rem 0 1.5rem 0;
+                border-bottom: 1px solid var(--Light-grayish-blue);
+                a{
+                    text-decoration: none;
+                    color:var(--Very-dark-grayish-blue);
+                    padding:0 .5rem 0rem 0rem;
+                    svg{
+                        float:right;
+                    }
+                    &:hover{
+                        color:var(--Soft-red);
+                    }
+                }
+                p{
+                    color: var(--Dark-grayish-blue);
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+
+    .box{
+        display: none;
+    }
+}
+
+.active{
+    color:var(--Very-dark-desaturated-blue);
+    font-weight: 700;
+}
+
+.rotate{
+    transform:rotateX(180deg)
+}
+
+.visible{
+    display: none;
+}
+
+@media (min-width:1024px){
+    body{
+        .images_mobile{
+            display: none;
+        }
+        .box{
+            display:block;
+            position:absolute;
+            top: 62%;
+            transform:translateY(-62%);
+            left: 6.5%;
+            z-index: 999;
+        }
+        main{
+            width: 70%;
+            display:flex;
+            padding:3rem 2rem;
+            margin: 0 auto;
+            overflow:hidden;
+            .images_desktop{
+                width: 50%;
+                display: block;
+                .desktop_illustration{
+                    position: absolute;
+                    top: 50%;
+                    left: -10%;
+                    transform:translateY(-50%);
+                    width: 50%;
+                    z-index:2;
+                }
+                .desktop_pattern{
+                    width: 100%;
+                    position:absolute;
+                    top: 65%;
+                    left: -60%;
+                    transform:translateY(-65%);
+                    z-index: 1;
+                }
+            }
+            .questions{
+                width: 50%;
+                margin: auto;
+                padding: 0 2rem 0 0;
+                text-align: left;
+                li{
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+    
